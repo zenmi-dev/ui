@@ -1,0 +1,22 @@
+.ui-pagination {
+  @apply w-fit max-w-full flex items-center gap-1;
+}
+
+.ui-pagination-group {
+  @apply grow-1 overflow-auto flex items-center gap-1;
+}
+
+.ui-pagination-item,
+.ui-pagination-icon {
+  @apply shrink-0 px-1.5 h-8 min-w-8 flex items-center justify-center cursor-pointer rounded-lg;
+}
+.ui-pagination-item:not(.ui-pagination-active):hover,
+.ui-pagination-icon:hover {
+  @apply bg-light;
+}
+.ui-pagination-active {
+  @apply border text-primary;
+}
+.ui-pagination-ellipsis {
+  @apply text-gray;
+}

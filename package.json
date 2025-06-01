@@ -1,0 +1,63 @@
+{
+  "name": "@zenmi/ui",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./dist/lib/components/index.js",
+    "./styles.css": "./dist/lib/components/styles.css",
+    "./utils": "./dist/lib/utils/index.js",
+    "./hooks": "./dist/lib/hooks/index.js",
+    "./router": "./dist/lib/router/index.js"
+  },
+  "scripts": {
+    "dev": "node index.js",
+    "build": "npm run build:src && npm run build:lib",
+    "build:src": "vite build && vite build -c vite.ssr.config.ts",
+    "build:lib": "npm run build:utils && npm run build:hooks && npm run build:router && npm run build:components",
+    "build:utils": "vite build -c vite.lib.config.ts",
+    "build:hooks": "vite build -c vite.lib.config.ts",
+    "build:router": "vite build -c vite.lib.config.ts",
+    "build:components": "vite build -c vite.lib.config.ts",
+    "preview": "cross-env NODE_ENV=production node index.js",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "files": [
+    "dist/lib"
+  ],
+  "author": "zenmi.dev",
+  "license": "MIT",
+  "description": "A React UI library designed for intuitive use while providing deep customization capabilities.",
+  "homepage": "https://ui.zenmi.dev",
+  "repository": "github:zenmi-dev/ui",
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/compression": "^1.8.0",
+    "@types/css-modules": "^1.0.5",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.29",
+    "@types/prismjs": "^1.26.5",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "compression": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "express": "^5.1.0",
+    "marked": "^15.0.12",
+    "nodemon": "^3.1.10",
+    "prismjs": "^1.30.0",
+    "rimraf": "^6.0.1",
+    "sirv": "^3.0.1",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-node": "^3.1.4",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

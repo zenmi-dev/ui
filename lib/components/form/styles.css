@@ -1,0 +1,250 @@
+.ui-input input,
+.ui-input-box {
+  @apply outline-info accent-info;
+}
+
+.ui-input {
+  @apply inline-flex items-center gap-1;
+}
+.ui-input:has(> input[disabled]),
+.ui-input:has(> textarea[disabled]) {
+  @apply pointer-events-none border-light text-gray;
+}
+.ui-input input,
+.ui-input textarea {
+  @apply grow-1 w-full placeholder:text-gray;
+}
+.ui-input-icon {
+  @apply cursor-pointer text-gray hover:text-deep;
+}
+
+.ui-input-box {
+  @apply py-1 px-2 w-60 overflow-hidden rounded-lg border border-gray;
+}
+.ui-input-box:hover {
+  @apply outline-1 -outline-offset-1;
+}
+.ui-input-box:focus-within {
+  @apply outline-2 -outline-offset-2;
+}
+.ui-input-box input,
+.ui-input-box textarea {
+  @apply outline-none;
+}
+
+.ui-input-number {
+  @apply w-40;
+}
+.ui-input-number input {
+  @apply text-center;
+}
+.ui-input-number input::-webkit-inner-spin-button {
+  @apply appearance-none;
+}
+
+.ui-textarea {
+  @apply p-0;
+}
+.ui-textarea textarea {
+  @apply py-1 px-2 min-h-8;
+}
+
+.ui-radio,
+.ui-checkbox {
+  @apply cursor-pointer gap-2;
+}
+.ui-radio input,
+.ui-checkbox input {
+  @apply cursor-pointer h-4 w-4;
+}
+.ui-radio-group,
+.ui-checkbox-group {
+  @apply flex-wrap gap-4;
+}
+
+.ui-switch {
+  @apply relative h-6 w-11;
+}
+.ui-switch input + span {
+  @apply absolute top-0 left-0 h-full w-full cursor-pointer rounded-full bg-gray;
+  @apply transition-all duration-300;
+}
+.ui-switch input:checked + span {
+  @apply bg-info;
+}
+.ui-switch input:disabled + span {
+  @apply bg-light;
+}
+.ui-switch input + span::after {
+  @apply content-[''] absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white;
+  @apply transition-all duration-300;
+}
+.ui-switch input:checked + span::after {
+  @apply left-[calc(100%_-_2px)] -translate-x-full;
+}
+
+.ui-slider {
+  @apply w-60 relative;
+}
+.ui-slider input {
+  @apply appearance-none cursor-pointer;
+}
+.ui-slider input::-webkit-slider-thumb {
+  @apply appearance-none relative h-4 w-4 rounded-full border-2 border-info bg-white;
+}
+.ui-slider-bg {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 h-2 w-full overflow-auto
+    pointer-events-none rounded-lg bg-light;
+}
+.ui-slider-bg > div {
+  @apply h-full bg-info;
+}
+
+.ui-select {
+  @apply relative w-40;
+}
+.ui-select-multiple,
+.ui-select-multiple > div  {
+  @apply w-full;
+}
+.ui-select > .ui-dropdown {
+  @apply absolute bottom-0 left-0 w-full;
+}
+.ui-select > .ui-input-icon {
+  @apply cursor-default text-gray;
+  @apply transition-[transform] duration-600;
+}
+.ui-select-open > .ui-input-icon {
+  @apply rotate-x-180;
+}
+.ui-select:not(.ui-select-open) .ui-select-search.ui-select-has-value::placeholder {
+  @apply text-default;
+}
+.ui-select-search:disabled::placeholder {
+  @apply !text-gray;
+}
+.ui-select-dropdown {
+  @apply p-0;
+}
+.ui-select-options {
+  @apply p-1 flex flex-col overflow-auto;
+}
+.ui-select-options > div {
+  @apply py-1 px-2 flex items-center gap-3 rounded-lg;
+}
+.ui-select-options > div > span:not(.ui-input-icon) {
+  @apply grow-1 overflow-auto;
+}
+.ui-select-options > div:not(.ui-select-active) > .ui-input-icon {
+  @apply invisible;
+}
+.ui-select-hover:not(.ui-select-disabled) {
+  @apply cursor-pointer bg-light;
+}
+.ui-select-active:not(.ui-select-disabled),
+.ui-select-active:not(.ui-select-disabled) > .ui-input-icon {
+  @apply text-info;
+}
+.ui-select-disabled {
+  @apply select-none text-gray;
+}
+.ui-select-no-data {
+  @apply py-2 px-3 text-center text-gray;
+}
+.ui-select-tags {
+  @apply max-w-full overflow-auto flex flex-wrap gap-1;
+}
+.ui-select-tags input {
+  @apply min-w-14 w-0;
+}
+.ui-select-tag {
+  @apply px-1 max-w-full flex items-center gap-1 rounded-lg bg-light;
+}
+.ui-select-tag > span:not(.ui-input-icon) {
+  @apply grow-1 overflow-auto;
+}
+
+.ui-date-picker {
+  @apply w-40;
+}
+.ui-date-picker.ui-date-picker-datetime {
+  @apply w-60;
+}
+.ui-date-picker > .ui-input-icon {
+  @apply cursor-default text-gray;
+}
+.ui-date-picker-popover {
+  @apply p-0;
+}
+.ui-date-picker-body {
+  @apply overflow-auto flex items-start;
+}
+.ui-date-picker-body .ui-calendar {
+  @apply border-none shadow-none;
+}
+.ui-date-picker-body .ui-calendar .ui-calendar-active:not(.ui-disabled) {
+  @apply bg-info text-white;
+}
+.ui-date-picker-body .ui-calendar + .ui-date-picker-time-options {
+  @apply p-2 border-l border-light;
+}
+.ui-date-picker-time-options {
+  @apply p-1 w-full flex text-center;
+}
+.ui-date-picker-time-unit {
+  @apply grow-1 h-full min-w-10 overflow-auto;
+  scrollbar-width: none;
+}
+.ui-date-picker-time-unit > div:not(:last-child) {
+  @apply py-0.5 cursor-pointer rounded-lg hover:bg-light;
+}
+.ui-date-picker-time-unit > div:last-child {
+  @apply h-[calc(100%_-_28px)];
+}
+.ui-date-picker-time-active {
+  @apply text-info;
+}
+.ui-date-picker-footer {
+  @apply p-2 border-t border-light;
+}
+.ui-date-picker-action {
+  @apply flex justify-between gap-3;
+}
+.ui-date-picker-date .ui-date-picker-action {
+  @apply flex justify-center;
+}
+.ui-date-picker-button {
+  @apply px-2 cursor-pointer rounded-lg;
+}
+.ui-date-picker-button:not(:disabled) {
+  @apply text-info;
+}
+
+.ui-color-picker input {
+  @apply cursor-pointer h-6 w-6;
+}
+
+.ui-upload {
+  @apply align-top max-w-full flex-col items-start;
+}
+.ui-upload input {
+  @apply hidden;
+}
+.ui-upload-trigger {
+  @apply cursor-pointer;
+}
+.ui-upload-trigger > .ui-upload-button {
+  @apply pointer-events-none inline-flex items-center gap-1;
+}
+.ui-upload-list {
+  @apply max-w-full;
+}
+.ui-upload-item {
+  @apply py-1 px-2 flex items-center gap-3 rounded-lg hover:bg-light;
+}
+.ui-upload-item > span:not(.ui-input-icon) {
+  @apply grow-1 overflow-auto;
+}
+.ui-upload-item:not(:hover) > .ui-input-icon {
+  @apply invisible;
+}

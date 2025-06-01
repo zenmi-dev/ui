@@ -1,0 +1,31 @@
+.ui-dropdown {
+  @apply inline-block;
+}
+
+.ui-dropdown-trigger {
+  @apply py-1 px-2 flex items-center gap-3 cursor-pointer;
+}
+.ui-dropdown-trigger > span:not(.ui-dropdown-icon) {
+  @apply grow-1 overflow-auto;
+}
+.ui-dropdown-trigger > .ui-dropdown-icon {
+  @apply text-gray;
+  @apply transition-[transform] duration-600;
+}
+.ui-dropdown-open > .ui-dropdown-trigger > .ui-dropdown-icon {
+  @apply rotate-x-180;
+}
+
+.ui-dropdown-content {
+  @apply fixed z-9999
+    py-1 px-2 max-h-screen max-w-screen overflow-auto
+    border rounded-lg shadow-lg border-light bg-background;
+  @apply transition-all duration-300;
+  @apply grid grid-rows-[0fr] opacity-0;
+}
+.ui-dropdown-content.ui-dropdown-open {
+  @apply grid-rows-[1fr] opacity-100;
+}
+.ui-dropdown-content > div {
+  @apply overflow-hidden;
+}

@@ -1,0 +1,6 @@
+.ui-button {
+  @apply py-1 px-4 rounded-lg border text-primary;
+}
+.ui-button:not(:disabled) {
+  @apply cursor-pointer;
+}

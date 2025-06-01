@@ -1,0 +1,91 @@
+@theme {
+  --animate-ui-toast-open-left: ui-toast-open-left 0.3s forwards;
+  --animate-ui-toast-open-right: ui-toast-open-right 0.3s forwards;
+  --animate-ui-toast-close: ui-toast-close 0.3s forwards;
+  @keyframes ui-toast-open-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes ui-toast-open-right {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  @keyframes ui-toast-close {
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.ui-toast {
+  @apply fixed bottom-3 right-3 z-9999 w-80 max-w-[calc(100vw_-_24px)];
+}
+.ui-toast-top-left {
+  @apply top-3 left-3;
+}
+.ui-toast-top-right {
+  @apply top-3 right-3;
+}
+.ui-toast-bottom-left {
+  @apply bottom-3 left-3;
+}
+.ui-toast-bottom-right {
+  @apply bottom-3 right-3;
+}
+
+.ui-toast-item {
+  @apply absolute right-0
+    p-3 w-80 max-w-[calc(100vw_-_24px)] flex items-start gap-2
+    rounded-lg shadow-lg border border-light bg-background;
+  @apply transition-all duration-300;
+}
+.ui-toast-top-left > .ui-toast-item,
+.ui-toast-bottom-left > .ui-toast-item {
+  @apply animate-ui-toast-open-left;
+}
+.ui-toast-top-right > .ui-toast-item,
+.ui-toast-bottom-right > .ui-toast-item {
+  @apply animate-ui-toast-open-right;
+}
+.ui-toast-item.ui-toast-close {
+  @apply animate-ui-toast-close;
+}
+
+.ui-toast-item > .ui-toast-icon {
+  @apply h-6;
+}
+.ui-toast-info > .ui-toast-icon {
+  @apply text-info;
+}
+.ui-toast-success > .ui-toast-icon {
+  @apply text-success;
+}
+.ui-toast-error > .ui-toast-icon {
+  @apply text-error;
+}
+.ui-toast-warning > .ui-toast-icon {
+  @apply text-warning;
+}
+.ui-toast-loading > .ui-toast-icon {
+  @apply text-info animate-spin;
+}
+
+.ui-toast-content {
+  @apply grow-1 overflow-auto flex flex-col gap-1;
+}
+.ui-toast-title {
+  @apply flex items-center gap-3;
+}
+.ui-toast-title > span:not(.ui-toast-icon) {
+  @apply grow-1 overflow-auto;
+}
+.ui-toast-title > .ui-toast-icon {
+  @apply cursor-pointer text-gray hover:text-deep;
+}
+.ui-toast-description {
+  @apply overflow-auto text-gray;
+}

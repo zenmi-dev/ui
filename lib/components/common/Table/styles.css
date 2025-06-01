@@ -1,0 +1,24 @@
+.ui-table {
+  @apply w-fit max-w-full overflow-auto rounded-lg border border-light bg-background;
+}
+
+.ui-table table {
+  @apply w-full;
+}
+.ui-table thead {
+  @apply sticky top-0 outline-1 outline-light bg-background;
+}
+.ui-table tbody tr:not(:last-child)  {
+  @apply border-b border-light;
+}
+.ui-table tfoot {
+  @apply sticky bottom-0 outline-1 outline-light bg-background;
+}
+
+.ui-table th {
+  @apply font-normal;
+}
+.ui-table th,
+.ui-table td {
+  @apply p-2;
+}

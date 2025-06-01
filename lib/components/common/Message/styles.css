@@ -1,0 +1,67 @@
+@theme {
+  --animate-ui-message-open-top: ui-message-open-top 0.3s forwards;
+  --animate-ui-message-open-bottom: ui-message-open-bottom 0.3s forwards;
+  --animate-ui-message-close-top: ui-message-close-top 0.3s forwards;
+  --animate-ui-message-close-bottom: ui-message-close-bottom 0.3s forwards;
+  @keyframes ui-message-open-top {
+    0% {
+      opacity: 0;
+      transform: translateY(calc(-100% - 12px));
+    }
+  }
+  @keyframes ui-message-open-bottom {
+    0% {
+      opacity: 0;
+      transform: translateY(calc(100% + 12px));
+    }
+  }
+  @keyframes ui-message-close-top {
+    100% {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+  }
+  @keyframes ui-message-close-bottom {
+    100% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
+
+.ui-message {
+  @apply fixed left-[50vw] -translate-x-1/2 z-9999
+    py-2 px-3 max-w-[calc(100vw_-_24px)] flex items-center gap-2
+    rounded-lg shadow-lg border border-light bg-background;
+}
+.ui-message-top {
+  @apply top-3 animate-ui-message-open-top;
+}
+.ui-message-bottom {
+  @apply bottom-3 animate-ui-message-open-bottom;
+}
+.ui-message-top.ui-message-close {
+  @apply animate-ui-message-close-top;
+}
+.ui-message-bottom.ui-message-close {
+  @apply animate-ui-message-close-bottom;
+}
+
+.ui-message > span:not(.ui-message-icon) {
+  @apply grow-1 overflow-auto;
+}
+.ui-message-info > .ui-message-icon {
+  @apply text-info;
+}
+.ui-message-success > .ui-message-icon {
+  @apply text-success;
+}
+.ui-message-error > .ui-message-icon {
+  @apply text-error;
+}
+.ui-message-warning > .ui-message-icon {
+  @apply text-warning;
+}
+.ui-message-loading > .ui-message-icon {
+  @apply text-info animate-spin;
+}

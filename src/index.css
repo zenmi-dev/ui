@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+  --color-default: var(--ui-default);
+  --color-background: var(--ui-background);
+  --color-primary: var(--ui-primary);
+  --color-info: var(--ui-info);
+  --color-success: var(--ui-success);
+  --color-error: var(--ui-error);
+  --color-warning: var(--ui-warning);
+  --color-light: var(--ui-light);
+  --color-gray: var(--ui-gray);
+  --color-deep: var(--ui-deep);
+}
+
+.app-header {
+  @apply px-6 h-15 flex justify-between bg-background;
+}
+.app-header > div {
+  @apply flex items-center;
+}
+.app-header > div:first-child {
+  @apply gap-4;
+}
+.app-header > div:last-child {
+  @apply gap-1;
+}
+.app-header a img {
+  @apply h-5 w-5;
+}
+.app-sider {
+  @apply p-4;
+}
+
+.app-home {
+  @apply cursor-pointer text-xl;
+}
+.app-menu,
+.app-menu-title {
+  @apply font-[monospace];
+}
+.app-menu-title {
+  @apply mt-2 mb-1 p-1 font-bold text-gray;
+}
+.app-sider .app-menu .ui-menu-active {
+  @apply font-bold;
+}
+.app-drawer {
+  @apply text-xl;
+}
+.app-drawer .ui-drawer-content {
+  @apply p-6;
+}
+.app-drawer .app-menu {
+  @apply w-full;
+}
+.app-header-icon {
+  @apply p-2 rounded-full overflow-auto cursor-pointer hover:bg-light;
+}
+
+.app-container {
+  @apply p-6 h-full overflow-auto flex gap-6;
+  scrollbar-gutter: stable;
+}
+.app-container > div:nth-child(1) {
+  @apply grow-1 mx-auto h-fit overflow-auto;
+}
+.app-container > div:nth-child(2) {
+  @apply shrink-0 sticky top-0 min-w-50 overflow-auto;
+}
+.app-container h1,
+.app-container h2,
+.app-container h3 {
+  @apply font-medium;
+}
+.app-container h1 {
+  @apply text-3xl leading-15;
+}
+.app-container h2 {
+  @apply text-2xl leading-12;
+}
+.app-container h3 {
+  @apply text-lg leading-9;
+}
+.app-container ul {
+  @apply pl-6 text-deep;
+}
+.app-container li {
+  @apply list-disc;
+}
+.app-container pre {
+  @apply !m-0 !text-sm rounded-lg;
+}
+
+.example-tabs {
+  @apply my-4;
+}
+.example-content,
+.example-code {
+  @apply relative rounded-lg border border-light;
+}
+.example-content {
+  @apply py-15 px-6 md:px-30;
+}
+.example-code {
+  @apply p-0;
+}
+.example-code-icon {
+  @apply absolute top-4 right-4 cursor-pointer text-gray hover:text-deep;
+}
+.example-code .example-code-icon {
+  @apply hover:text-white;
+}
+.example-code-popover {
+  @apply bg-black text-white;
+}
+
+.api-wraps {
+  @apply flex items-baseline gap-1;
+}
+.api-wraps span {
+  @apply text-sm text-gray;
+}
+.api-wraps a {
+  @apply text-sm;
+}
+.api-wraps a,
+.api-table a {
+  @apply text-info;
+}
+.api-table {
+  @apply mt-4 mb-8 w-full text-left text-deep;
+}
+.api-table table thead {
+  @apply bg-light;
+}
+
+.api-table th {
+  @apply w-3/10;
+}
+.api-table th:nth-child(2) {
+  @apply w-4/10;
+}
+.api-table td {
+  @apply whitespace-pre-line;
+}
+.api-none {
+  @apply text-gray;
+}
+.api-description {
+  @apply text-deep;
+}
+.api-description pre {
+  @apply !text-base;
+}
+
+.example-content > .ui-layout {
+  @apply h-80 border border-gray;
+}
+.example-content .ui-layout:not(.ui-layout-has-sider) {
+  @apply flex;
+}
+
+.markdown h2 {
+  @apply mt-6;
+}
+.markdown h3 {
+  @apply mt-3;
+}
+.markdown p {
+  @apply text-deep;
+}
+.markdown pre {
+  @apply !my-2;
+}
+.markdown :not(pre) code {
+  @apply px-1 font-bold rounded bg-light text-default;
+}

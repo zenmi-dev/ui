@@ -1,0 +1,24 @@
+.ui-tabs {
+  @apply flex flex-col;
+}
+
+.ui-tabs-list {
+  @apply shrink-0 overflow-auto flex border-b border-light;
+}
+
+.ui-tabs-trigger {
+  @apply py-1 px-4 cursor-pointer border-b-2 text-gray hover:text-deep;
+}
+.ui-tabs-trigger:not(.ui-tabs-active) {
+  @apply border-transparent;
+}
+.ui-tabs-trigger.ui-tabs-active {
+  @apply text-primary;
+}
+
+.ui-tabs-content {
+  @apply grow-1 p-3 overflow-auto;
+}
+.ui-tabs-content:not(.ui-tabs-active) {
+  @apply hidden;
+}

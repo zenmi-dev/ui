@@ -1,0 +1,18 @@
+.ui-carousel {
+  @apply flex items-center gap-3;
+}
+
+.ui-carousel-scroll {
+  @apply grow-1 overflow-hidden;
+}
+.ui-carousel-group {
+  @apply flex items-center gap-3;
+  @apply transition-all duration-600;
+}
+.ui-carousel-item {
+  @apply shrink-0 p-3 w-full overflow-auto rounded-lg shadow border border-light;
+}
+
+.ui-carousel-icon {
+  @apply p-2 cursor-pointer hover:bg-light;
+}

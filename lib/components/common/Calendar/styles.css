@@ -1,0 +1,33 @@
+.ui-calendar {
+  @apply p-3 w-fit min-w-70 max-w-full overflow-auto rounded-lg shadow border border-light bg-background;
+}
+.ui-calendar-title {
+  @apply flex items-center font-medium;
+}
+.ui-calendar-month {
+  @apply grow-1 mx-2 text-center;
+}
+.ui-calendar-icon {
+  @apply p-1 flex items-center justify-center rounded-full cursor-pointer hover:bg-light;
+}
+
+.ui-calendar-week {
+  @apply py-1 text-gray;
+}
+.ui-calendar-week,
+.ui-calendar-days {
+  @apply grid grid-cols-7 gap-1;
+}
+.ui-calendar-week > span,
+.ui-calendar-days > span {
+  @apply rounded-lg min-h-8 min-w-8 overflow-auto inline-flex items-center justify-center;
+}
+.ui-calendar-days > span:hover {
+  @apply cursor-pointer bg-light;
+}
+.ui-calendar-days > span.ui-calendar-active:not(.ui-disabled) {
+  @apply bg-primary text-background;
+}
+.ui-calendar-days > span:not(.ui-calendar-day) {
+  @apply text-gray;
+}

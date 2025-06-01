@@ -1,0 +1,39 @@
+.ui-layout {
+  @apply grow-1 h-screen overflow-auto flex flex-col;
+}
+.ui-layout-has-sider {
+  @apply flex-row;
+}
+
+
+.ui-layout-header,
+.ui-layout-sider {
+  @apply sticky top-0 overflow-auto z-10;
+}
+.ui-layout-main {
+  @apply grow-1 overflow-auto;
+}
+.ui-layout-header,
+.ui-layout-footer,
+.ui-layout-sider {
+  @apply shrink-0 border-light;
+}
+.ui-layout-header {
+  @apply border-b;
+}
+.ui-layout-footer {
+  @apply border-t;
+}
+.ui-layout-sider:first-child {
+  @apply border-r;
+}
+.ui-layout-sider:last-child {
+  @apply border-l;
+}
+
+.ui-layout .ui-layout {
+  @apply h-[unset];
+}
+.ui-layout .ui-layout:not(.ui-layout-has-sider) {
+  @apply block;
+}

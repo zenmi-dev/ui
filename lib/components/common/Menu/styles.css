@@ -1,0 +1,46 @@
+.ui-menu-vertical {
+  @apply p-1 w-fit min-w-50 max-w-full;
+}
+.ui-menu-vertical,
+.ui-menu-vertical.ui-dropdown-content > div {
+  @apply flex flex-col gap-1;
+}
+.ui-menu-vertical.ui-popover {
+  @apply !p-1;
+}
+.ui-menu-horizontal {
+  @apply flex items-end gap-2 overflow-auto;
+}
+
+.ui-menu-item,
+.ui-menu-group-title {
+  @apply py-1 px-2 cursor-pointer rounded-lg text-deep hover:text-primary;
+}
+.ui-menu-active {
+  @apply font-medium text-primary;
+}
+
+.ui-menu-group-title {
+  @apply flex items-center gap-3;
+}
+.ui-menu-group-title > span:not(.ui-icon) {
+  @apply grow-1 overflow-auto;
+}
+.ui-menu-group-title > .ui-icon {
+  @apply text-gray;
+  @apply transition-[transform] duration-600;
+}
+.ui-menu-open:not(.ui-menu-popover) > .ui-menu-group-title > .ui-menu-icon {
+  @apply rotate-x-180;
+}
+
+.ui-menu-group-children {
+  @apply transition-all duration-300;
+  @apply grid grid-rows-[0fr];
+}
+.ui-menu-open > .ui-menu-group-children {
+  @apply pt-1 grid-rows-[1fr];
+}
+.ui-menu-group-children > div {
+  @apply flex flex-col gap-1 overflow-hidden;
+}

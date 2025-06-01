@@ -1,0 +1,24 @@
+@theme {
+  --animate-ui-context-menu-open: ui-context-menu-open 0.3s forwards;
+  --animate-ui-context-menu-close: ui-context-menu-close 0.3s forwards;
+  @keyframes ui-context-menu-open {
+    0% {
+      opacity: 0;
+    }
+  }
+  @keyframes ui-context-menu-close {
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.ui-context-menu {
+  @apply fixed z-9999
+    py-1 px-2 max-h-screen max-w-screen overflow-auto
+    rounded-lg shadow-lg border border-light bg-background;
+  @apply animate-ui-context-menu-open;
+}
+.ui-context-menu-close {
+  @apply animate-ui-context-menu-close;
+}

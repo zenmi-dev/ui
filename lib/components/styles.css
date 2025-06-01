@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "./common/Button/styles.css";
+@import "./common/Calendar/styles.css";
+@import "./common/Card/styles.css";
+@import "./common/Carousel/styles.css";
+@import "./common/Collapse/styles.css";
+@import "./common/ContextMenu/styles.css";
+@import "./common/Dialog/styles.css";
+@import "./common/Divider/styles.css";
+@import "./common/Drawer/styles.css";
+@import "./common/Dropdown/styles.css";
+@import "./common/Icon/styles.css";
+@import "./common/Layout/styles.css";
+@import "./common/Menu/styles.css";
+@import "./common/Message/styles.css";
+@import "./common/Overlay/styles.css";
+@import "./common/Pagination/styles.css";
+@import "./common/Popover/styles.css";
+@import "./common/Table/styles.css";
+@import "./common/Tabs/styles.css";
+@import "./common/Toast/styles.css";
+@import "./form/styles.css";
+
+:root {
+  --ui-default: oklch(0% 0 0);
+  --ui-background: oklch(100% 0 0);
+  --ui-primary: oklch(0% 0 0);
+  --ui-info: oklch(62.3% 0.214 259.815);
+  --ui-success: oklch(72.3% 0.219 149.579);
+  --ui-error: oklch(63.7% 0.237 25.331);
+  --ui-warning: oklch(76.9% 0.188 70.08);
+  --ui-light: oklch(92.8% 0.006 264.531);
+  --ui-gray: oklch(70.7% 0.022 261.325);
+  --ui-deep: oklch(44.6% 0.03 256.802);
+}
+
+.dark {
+  --ui-default: oklch(100% 0 0);
+  --ui-background: oklch(13% 0.028 261.692);
+  --ui-primary: oklch(100% 0 0);
+  --ui-info: oklch(70.7% 0.165 254.624);
+  --ui-success: oklch(79.2% 0.209 151.711);
+  --ui-error: oklch(70.4% 0.191 22.216);
+  --ui-warning: oklch(75% 0.183 55.934);
+  --ui-light: oklch(44.6% 0.03 256.802);
+  --ui-gray: oklch(70.7% 0.022 261.325);
+  --ui-deep: oklch(92.8% 0.006 264.531);
+}
+
+@theme {
+  --color-default: var(--ui-default);
+  --color-background: var(--ui-background);
+  --color-primary: var(--ui-primary);
+  --color-info: var(--ui-info);
+  --color-success: var(--ui-success);
+  --color-error: var(--ui-error);
+  --color-warning: var(--ui-warning);
+  --color-light: var(--ui-light);
+  --color-gray: var(--ui-gray);
+  --color-deep: var(--ui-deep);
+}
+
+body {
+  @apply bg-background text-default;
+}
+
+* {
+  scrollbar-color: lightgray transparent;
+  scrollbar-width: thin;
+}
+
+.ui-disabled {
+  @apply !pointer-events-none !text-gray;
+}
