@@ -120,7 +120,7 @@ function CollapseContent(props: Collapse.ContentProps) {
       {...props}
       className={cls('ui-collapse-content', props.className)}
     >
-      <p>{props.children}</p>
+      <div>{props.children}</div>
     </div>
   )
 }

@@ -23,6 +23,6 @@
 .ui-collapse-open > .ui-collapse-content {
   @apply pt-3 grid-rows-[1fr];
 }
-.ui-collapse-content > p {
-  @apply overflow-hidden whitespace-pre-wrap;
+.ui-collapse-content > div {
+  @apply overflow-hidden;
 }
