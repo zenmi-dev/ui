@@ -10,7 +10,7 @@
   @apply transition-all duration-600;
 }
 .ui-carousel-item {
-  @apply shrink-0 p-3 w-full overflow-auto rounded-lg shadow border border-light;
+  @apply shrink-0 p-3 w-full overflow-auto rounded-lg border border-light;
 }
 
 .ui-carousel-icon {
