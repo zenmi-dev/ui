@@ -14,5 +14,8 @@
 }
 
 .ui-carousel-icon {
-  @apply p-2 cursor-pointer hover:bg-light;
+  @apply p-2;
+}
+.ui-carousel-icon:not(.ui-disabled) {
+  @apply cursor-pointer hover:bg-light;
 }

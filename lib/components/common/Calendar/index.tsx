@@ -21,7 +21,7 @@ function Calendar(
   {
     date: propsDate,
     onChangeDate,
-    minDate = '2025',
+    minDate = null,
     maxDate = null,
     disabledDate,
     monthRender,
